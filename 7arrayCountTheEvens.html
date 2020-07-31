@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Count THE Evens</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+    function evens(){
+        var list = [ 17, 8, 9, 5, 20 ];
+        plz = countEvens(list);
+    }
+
+    function countEvens(list){
+        var count = 0;
+        for(var i = 0; i <= list.length; i++) {
+            if (list[i] % 2 == 0)
+            count += 1;
+        }
+        document.getElementById('heyo').innerHTML = count;
+        return count;
+    }
+
+</script>
+</head>
+
+<body>
+<h3>
+  <br>
+  Count THE Evens
+</h3>
+<button type="button" onclick="countEvens()"> Add the End! </button>
+<br>
+<div id="heyo"></div>
+</body>
+</html>

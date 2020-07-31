@@ -1,0 +1,125 @@
+<!--
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>My First JavaScript Program</title>
+<script>
+/* Defining Table
+ * Input: No user input
+ * Processing: None
+ * Output: The message "Water is delicious!"
+ */
+function showMessage() {
+    // The next line of code causes the computer
+    // to open a popup window that contains the
+    // words "Water is delicious!"
+    alert("Orange Juice is delicious");
+}
+</script>
+</head>
+
+<body>
+    <button type="button" onclick="showMessage()">Message</button>
+</body>
+</html>
+-->
+<!--
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>A Program to Say Hello</title>
+<script>
+/* Defining Table
+ * Input: A person's name
+ * Processing: Create a greeting for that person
+ * Output: The greeting
+ */
+function greetUser() {
+    // This line prompts the user to type in his name.
+    let name = prompt("Welcome! What is your name? ");
+
+    // Create a personalized greeting for the user.
+    let greeting = "Hello " + name + ".  It's nice to meet you!.";
+
+    // The next line causes the computer to display
+    // a greeting to the user in a popup window.
+    alert(greeting);
+}
+</script>
+</head>
+
+<body>
+    <button type="button" onclick="greetUser()">Well hey there!</button>
+</body>
+</html>
+-->
+<!--
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Applied Scripture</title>
+<script>
+/* Defining Table
+ * Input: A person's name
+ * Processing: Create a verse of scripture for that person
+ * Output: The scripture
+ */
+function applyScripture() {
+    // Get the user's name from the text field that has the id
+    // of "nameInputBox" and store it in a variable named name.
+    let creation = document.getElementById('nameInputBox').value;
+
+    // Use string concatenation to create a verse
+    // of scripture personalized for the user.
+    let scripture = "And God said, Let there be " + creation +
+        ": and there was " + creation + ". Genesis 1:3";
+
+    // Display the scripture in the div that has the id "outputDiv".
+    document.getElementById('outputDiv').innerHTML = scripture;
+}
+</script>
+</head>
+
+<body>
+Please enter something you wish to be created: <input type="text" id="nameInputBox">
+<button type="button" onclick="applyScripture()">The Creation</button>
+<div id="outputDiv"></div>
+</body>
+</html>
+-->
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Template Code</title>
+<script>
+/* Defining Table
+ * Input: Template
+ * Processing: Is a template for future use
+ * Output: Template
+ */
+function template() {
+    // Get the user's name from the text field that has the id
+    // of "nameInputBox" and store it in a variable named name.
+    let template1 = document.getElementById('nameInputBox').value;
+
+    // Use string concatenation to create print output
+    // with personalization the user's input.
+    let template2 = "The quick brown " + template1 +
+        " jumps over the lazy doge.";
+
+    // Display the template items in the div that has the id "outputDiv".
+    document.getElementById('outputDiv').innerHTML = template2;
+}
+</script>
+</head>
+
+<body>
+Please enter anything that you wish would start jumping: <input type="text" id="nameInputBox">
+<button type="button" onclick="template()">Template Push Me Button</button>
+<div id="outputDiv"></div>
+</body>
+</html>

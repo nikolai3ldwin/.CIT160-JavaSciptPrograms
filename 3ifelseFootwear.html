@@ -1,0 +1,53 @@
+<!--
+Input:   Processing:    Output:
+Humid   if humid then   shoes
+Wind    if wind then    shoes
+Hot     if hot then     sandals
+Rain    if rain then    galoshes
+Snow    if snow then    boots
+-->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Footwear</title>
+
+<script>
+/* Input: An integer
+ * Processing: Determine if the integer is even or odd
+ * Output: A message that says the integer is even or odd
+ */
+function footwear() {
+    // Get the user input from a text field and convert it to an integer.
+    var weather = document.getElementById('inputBox').value;
+    var message;
+
+    // Choose a message.
+    if (weather == "humid" || weather == "wind" || weather == "cool") {
+        message = "You will wear shoes.";
+    }
+    else if (weather == "hot") {
+        message = "You will wear sandals.";
+    }
+    else if (weather == "rain") {
+        message = "You will wear galoshes.";
+    }
+    else if (weather == "snow") {
+        message = "You will wear boots.";
+    }
+    else {
+        message = "Not valid weather, guess you're staying home.";
+    }
+    // Display the message to the user.
+    document.getElementById('output').innerHTML = message;
+}
+</script>
+</head>
+
+<body>
+Please enter weather type: <input type="text" id="inputBox">
+<button type="button" onclick="footwear()">Footwear</button>
+<div id="output"></div>
+</body>
+</html>

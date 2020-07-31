@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get THE AverageBIG</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+      function lastList() {
+        var list = new Array(10);
+        for (var i = 0; i < 10; i++) {
+          list[i] = i * 5 + 975;
+        }
+        var call = averageBig(list);
+      }
+
+      function averageBig(list) {
+        var last = 0;
+        x = 0;
+        for (var i = 0; i < list.length; i++) {
+          if (list[i] > 1000) {
+            x++;
+            last += list[i];
+            document.getElementById("test").innerHTML = last.toFixed(2);
+          }
+        }
+        lastLast = last / x;
+        document.getElementById("output").innerHTML = lastLast.toFixed(2);
+        return lastLast.toFixed(2);
+      }
+    </script>
+  </head>
+
+  <body>
+    <button type="button" onclick="lastList()">Push ME plz</button>
+    <div id="test">Last Element:</div>
+    <div id="output">Last Element:</div>
+  </body>
+</html>
+
+<!--
+Write a JavaScript function named averageBig with this header
+
+function averageBig(list) {
+The parameter list is an array that contains numbers. The length of the list array will vary.
+Your function must compute the average of all the numbers stored in the array that are larger than 1000.
+For example, if your function were called like this:
+
+var list = [70, 1010, 950, 2014, 6];
+var score = averageBig(list);
+your function would return the number 1512.
+If none of the numbers in the array are larger than 1000, your function must return 0 (zero).
+
+-->

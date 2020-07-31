@@ -1,0 +1,50 @@
+<!--
+Input: Processing: Output:
+Date   weekDay     Wake up!
+       weekEnd     Sleep in.
+       Holiday     Sleep in.
+-->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sleep Day</title>
+
+<script>
+
+function sleepDay() {
+    var now = new Date();
+    var month = now.getMonth();
+    var dayOfMonth = now.getDate();
+    var dayOfWeek = now.getDay();
+    var clock;
+
+    // Choose a message.
+    if (dayOfWeek == 6 || dayOfWeek == 0) {
+      clock = 'Sleep in.'
+    }
+    else if (month == 0 && dayOfMonth == 1) { //New Year's
+      clock = 'Sleep in.'
+    }
+    else if (month == 6 && dayOfMonth == 4) { //Independence Day
+      clock = 'Sleep in.'
+    }
+    else if (month == 11 && dayOfMonth == 25) { //Christmas
+      clock = 'Sleep in.'
+    }
+    else {
+      clock = 'Get up!'
+    }
+
+    // Display the message to the user.
+    document.getElementById('output').innerHTML = clock;
+}
+</script>
+</head>
+
+<body>
+<button type="button" onclick="sleepDay()">Snooze</button>
+<div id="output"></div>
+</body>
+</html>

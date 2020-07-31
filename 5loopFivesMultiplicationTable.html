@@ -1,0 +1,39 @@
+<!--
+Write a defining table and a program to display the five times
+ table from 1 to 12 in this format:
+ Input Processing Output
+5      x 1         = 5
+5      x 2         = 10
+…
+5      x 12        = 60
+-->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Multiplication Table</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+ function multiTable() {
+   var fives = 5;
+   var out = '';
+
+   for (let i = 1;  i <= 12;  i++) {
+        out += fives + ' x ' + i + ' = ' + fives*i + '<br>';
+        document.getElementById('output').innerHTML = out;
+       }
+
+}
+</script>
+</head>
+
+<body>
+5's Multiplication Table:
+<button type="button" onclick="multiTable()">Click</button>
+<div id="output"></div>
+</body>
+</html>

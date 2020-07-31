@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Compute Future Value</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+ function doFV() {
+   var invest = parseFloat(document.getElementById('invest').value);
+   var rate = parseFloat(document.getElementById('rate').value);
+   var numYears = parseFloat(document.getElementById('numYears').value);
+   var periods = parseFloat(document.getElementById('periods').value);
+   var comFV = computeFutureValue(invest, rate, numYears, periods);
+
+   document.getElementById('output').innerHTML = comFV;
+  }
+  function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+   var a =  principal;
+   var r = annualRate / periodsPerYear;
+   var n = periodsPerYear * years;
+   var f = a * Math.pow((1+r), n);
+   return Math.round(f*100)/100;
+  }
+
+</script>
+</head>
+
+<body>
+Amount Invested (principal) <input type="text" id="invest" size="5"><br>
+Annual Rate (example 0.08) <input type="text" id="rate" size="5"><br>
+Number of Years <input type="text" id="numYears" size="5"><br>
+Periods per Year <input type="text" id="periods" size="5"><br>
+Wind Chill <button type="button" onclick="doFV()">Compute Future Value</button>
+<div id="output"></div>
+</body>
+</html>

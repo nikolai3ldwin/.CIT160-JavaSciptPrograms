@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get THE Name</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+      // Extracts a person's given name from his full name.
+      // This function assumes fullName contains a string in
+      // this format: FamilyName, GivenName
+      function names() {
+        var givenName = document.getElementById("gName").value;
+        var familyName = document.getElementById("fName").value;
+        var name = makeFullName(givenName, familyName);
+        document.getElementById("name").innerHTML = name;
+      }
+
+      function makeFullName(givenName, familyName) {
+        var fullName = new String(familyName + ", " + givenName);
+        var comma = fullName.indexOf("*");
+        var family = fullName.substring(comma);
+        return family;
+      }
+    </script>
+  </head>
+
+  <body>
+    Family Name <input type="text" id="fName" size="5" />
+    <br />
+    Given Name <input type="text" id="gName" size="5" />
+    <br />
+    <button type="button" onclick="names()">Click</button>
+    <div id="name"></div>
+  </body>
+</html>
+
+<!--
+Write a simple JavaScript function named makeFullName with two parameters named givenName and familyName. The function should return a string that contains the family name, a comma, and the given name. For example, if the function were called like this:
+
+var fn = makeFullName("Theodore", "Roosevelt");
+it would return "Roosevelt, Theodore" without the double quotes.
+
+-->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get THE Date</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+      function day() {
+        var getDate = document.getElementById("getDate").value;
+
+        var d = new Date(getDate);
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        var n = weekday[d.getDay()];
+
+        document.getElementById("output").innerHTML = n;
+        return d;
+      }
+    </script>
+  </head>
+
+  <body>
+    Enter Date (ex. YYYY/MM/DD) <input type="text" id="getDate" size="5" />
+    <button type="button" onclick="day()">Click</button>
+    <div id="output"></div>
+  </body>
+</html>
+
+<!--
+Write a program that allows a user to enter a date in the format YYYY/MM/DD (a four digit year,
+ a slash, a two digit month, a slash, and a two digit day of the month).
+ Your program should output the name of the day of the week for that date.
+ For example, if the user entered "2016/05/22", your program would output "Sunday".
+ Hint: your program should create a Date object and use the method Date.getDay().
+-->

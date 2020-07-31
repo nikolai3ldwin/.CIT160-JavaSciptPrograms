@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get THE Deprecation</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+      function deprecation(/*startValue, endValue, months*/) {
+        var s = parseFloat(document.getElementById("start").value); //startValue
+        var e = parseFloat(document.getElementById("end").value); //endValue
+        var m = parseFloat(document.getElementById("months").value); //months
+
+        var d = (s - e) / m;
+        document.getElementById("output").innerHTML = d.toFixed(2);
+        return d.toFixed(2);
+      }
+    </script>
+  </head>
+
+  <body>
+    Starting Value: <input type="text" id="start" size="5" /><br />
+    Ending Value: <input type="text" id="end" size="5" /><br />
+    Number of Months Asset Owned:
+    <input type="text" id="months" size="5" /><br />
+    <button type="button" onclick="deprecation()">Push ME plz</button>
+    <div id="output">Monthly Deprication Value:</div>
+  </body>
+</html>
+
+<!--
+Write a JavaScript function named depreciation that has three parameters named startValue, endValue, and months. This function should compute and return the monthly depreciation value of an asset given by this formula:
+
+d = (s - e) / m
+
+where d is the monthly depreciation value, s is the starting value of an asset, e is the ending value, and m is the number of months someone will own the asset.
+
+-->

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sale Day</title>
+
+<script>
+
+function saleDay() {
+    // Get the user input from a text field and convert it to an integer.
+    var dayOfWeek = new Date().getDay();
+    var price = parseFloat(document.getElementById('inputBox').value);
+    var sale;
+    var final;
+    var tax;
+
+    // Choose a message.
+    if (dayOfWeek == 2 || dayOfWeek == 3) {
+      console.log(price);
+          if (price > 50) {
+            sale = price*0.1;
+            final = price - sale;
+            tax = final*1.06;
+          }
+          else {
+            tax = price*1.06;
+          }
+    }
+    else {
+      tax = price*1.06;
+    }
+
+    tax = tax.toFixed(2);
+
+    // Display the message to the user.
+    document.getElementById('output').innerHTML = tax;
+}
+</script>
+</head>
+
+<body>
+Please enter price: <input type="text" id="inputBox">
+<button type="button" onclick="saleDay()">Total</button>
+<div id="output">$</div>
+</body>
+</html>

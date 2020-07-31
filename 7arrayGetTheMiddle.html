@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Get THE Middle</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+ function middle(){
+  var list = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+  var plz = getMiddle(list);
+ }
+ function getMiddle(list){
+        var out = (list[3] + list[4]) / 2;
+        document.getElementById('heyo').innerHTML = out;
+        return out;
+    }
+</script>
+</head>
+
+<body>
+<h3>
+  <br>
+  Get THE Middle
+</h3>
+<button type="button" onclick="getMiddle()"> Add the End! </button>
+<br>
+<div id="heyo"></div>
+</body>
+</html>

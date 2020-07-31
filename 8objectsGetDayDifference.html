@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get THE Difference IN Days</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+      function dayDif() {
+        var getDate1 = document.getElementById("getDate1").value;
+        var getDate2 = document.getElementById("getDate2").value;
+
+        var d1 = new Date(getDate1);
+        var d2 = new Date(getDate2);
+        var t1 = d1.getTime();
+        var t2 = d2.getTime();
+        var dif1 = t2 - t1;
+        var dif2 = dif1 / (1000 * 60 * 60 * 24);
+
+        document.getElementById("output").innerHTML = dif2;
+        return dif2;
+      }
+    </script>
+  </head>
+
+  <body>
+    Enter Date (ex. YYYY/MM/DD) <input type="text" id="getDate1" size="5" />
+    <br />
+    Enter Date (ex. YYYY/MM/DD) <input type="text" id="getDate2" size="5" />
+    <br />
+    <button type="button" onclick="dayDif()">Click</button>
+    <div id="output"></div>
+  </body>
+</html>
+
+<!--
+Write a program that allows a user to enter two dates in the format YYYY/MM/DD and outputs the difference in days between those two dates. Hint: your program should
+
+1. create two Date objects
+2. call the Date.getTime() method for both objects which will return the number of milliseconds since January 1, 1970
+3. subtract the millisecond values
+4. divide the difference by 86400000 (1000 * 60 * 60 * 24) to convert from milliseconds to days
+-->

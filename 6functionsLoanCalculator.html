@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Loan Calculator</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+
+ function doPayment() {
+   var i = parseFloat(document.getElementById('i').value);
+   var r = parseFloat(document.getElementById('r').value);
+   var n = parseFloat(document.getElementById('n').value);
+   var p = parseFloat(document.getElementById('p').value);
+   var comPay = computePayment(i, r, n, p);
+   document.getElementById('outputP').innerHTML = comPay;
+  }
+
+  function doBalance() {
+    var i = parseFloat(document.getElementById('i').value);
+    var r = parseFloat(document.getElementById('r').value);
+    var n = parseFloat(document.getElementById('n').value);
+    var p = parseFloat(document.getElementById('p').value);
+    var d = parseFloat(document.getElementById('d').value);
+
+    var pp = computePayment(i, r, n, p)
+    var pp = (Math.round( pp * 100)) / 100 ;
+    var answer = computeBalance(i, r, p, d, pp)
+    var answer = (Math.round( answer * 100)) / 100 ;
+
+    document.getElementById('outputB').innerHTML = answer;
+  }
+
+  function computePayment(principal, annualRate, years, periodsPerYear) {
+    var a = principal;
+    var r = annualRate / periodsPerYear;
+    var n = periodsPerYear * years;
+    var p = (a * r) / (1 - Math.pow((1 + r), -n));
+    return Math.round(p*100)/100;
+  }
+  function computeBalance(i, r, p, d, pp){
+    ratePerPeriod  = r / ( p )
+    growthRate = Math.pow( 1 + ratePerPeriod, d)
+    var b = (i * growthRate) - ( pp * ( growthRate - 1) ) / ( ratePerPeriod)
+    return b
+  }
+
+</script>
+</head>
+
+<body>
+Amount borrowed (principal) <input type="text" id="i" size="5"><br>
+Annual interest Rate (example: 0.05) <input type="text" id="r" size="5"><br>
+Number of Years <input type="text" id="n" size="5"><br>
+Payments per Period <input type="text" id="p" size="5"><br>
+<button type="button" onclick="doPayment()">Compute Payment</button>
+<div id="outputP">$</div>
+
+Number of Payments paid to date <input type="text" id="d" size="5"><br>
+<button type="button" oneclick="doBalance()">Compute Payoff Amount</button>
+<div id="outputB">$</div>
+</body>
+</html>

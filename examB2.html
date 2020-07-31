@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Volume of a Torus</title>
+    <script>
+      // Your JavaScript function belongs here.
+      function computeVolume(){
+        var inRad = parseFloat(document.getElementById('inner').value);
+        var ouRad = parseFloat(document.getElementById('outer').value);
+
+        var Vol = (Math.pow(Math.PI,2) * (inRad + ouRad) * (inRad - ouRad) * (inRad - ouRad)) / 4;
+
+        var v = Vol.toFixed(2);
+        document.getElementById('volume').innerHTML = v;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Volume of a Torus</h1>
+    Inner radius <input type="text" id="inner" /><br />
+    Outer radius <input type="text" id="outer" /><br />
+    <button type="button" onclick="computeVolume()">Volume</button><br />
+    Volume
+    <div id="volume"></div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!--
+Write a defining table and a program to display all powers
+of 2 from 20 up to 231, inclusive. In other words, your program should
+output this series: 1, 2, 4, 8, … 2147483648
+
+Input Processing Output
+5     **2         25
+      **3         125
+      ...
+      **20        95367431640625
+
+-->
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>To The Power Of...</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+ function thePower() {
+   var out = '';
+   var twos = '';
+
+   for (var i = 0;  i <= 31;  i++) {
+        twos += i + ', ' + '<br>';
+        out += 2**i + ', ' + '<br>';
+        document.getElementById('output1').innerHTML = twos;
+        document.getElementById('output').innerHTML = out;
+       }
+
+}
+</script>
+</head>
+
+<body>
+Your number to the Power of 20:
+<button type="button" onclick="thePower()">Click</button>
+
+<table style="width:100%">
+  <tr>
+    <th>Input</th>
+    <th>Output</th>
+  </tr>
+  <tr>
+    <td><div id="output1"></div></td>
+    <td><div id="output"></div></td>
+  </tr>
+</table>
+</body>
+</html>

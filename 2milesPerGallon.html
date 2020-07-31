@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Miles Per Gallon</title>
+<script>
+
+// Your JavaScript function belongs here.
+function computeRateOfChange() {
+
+var start = document.getElementById('mstart').value;
+var end = document.getElementById('mend').value;
+var gas = document.getElementById('gused').value;
+var rateOfChange = ((start - end) / gas) * -1;
+var mileage = rateOfChange.toFixed(2);
+document.getElementById("rate").innerHTML = rateOfChange;
+}
+</script>
+</head>
+
+<body>
+    <h1>Miles Per Gallon</h1>
+    Starting Odometer reading: <input type="text" id="mstart"><br>
+    Ending Odometer reading: <input type="text" id="mend"><br>
+    Gallons of Gas used: <input type="text" id="gused"><br>
+    <button type="button" onclick="computeRateOfChange()"> Compute </button><br>
+    Miles Per Gallon: <div id="rate"></div>
+</body>
+</html>

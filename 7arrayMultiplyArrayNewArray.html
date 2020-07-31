@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Multiply Array New Array</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+function multi() {
+  var list = [ 17, 8, 9, 5, 20 ];
+  var products = multiply(list, 3);
+}
+ function multiply(list, multiplier) {
+        var x = list.length - 1;
+        var newList = new Array(list.length);
+        for(var i = 0; i <= x; i++) {
+          var products = list[i] * multiplier;
+          newList[i] = products;
+    }
+    document.getElementById('newList').innerHTML = newList;
+    return newList;
+}   
+</script>
+</head>
+
+<body>
+<h3>
+  <br>
+  Multiply Array New Array
+</h3>
+<button type="button" onclick="multi()"> Multiply! </button>
+<br>
+<div id="newList"></div>
+</body>
+</html>

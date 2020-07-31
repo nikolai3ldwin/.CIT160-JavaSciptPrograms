@@ -1,0 +1,64 @@
+<!--Write a JavaScript program with a function named fives that reads two
+numbers from two text fields and then outputs to a div "True" if both of
+the numbers are greater than 5 or if their sum is greater than 20.
+Otherwise your function should output "False" to the div.
+
+Test Cases
+Inputs	Output
+-4	5	False
+-4	6	False
+-4	24	False
+-4	25	True
+3	5	False
+3	6	False
+3	17	False
+3	18	True
+5	5	False
+5	6	False
+5	15	False
+5	16	True
+8	5	False
+8	6	True
+8	12	True
+8	13	True -->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>5's</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+ function fives() {
+   var one = parseFloat(document.getElementById('one').value);
+   var two = parseFloat(document.getElementById('two').value);
+   var tf;
+
+   if (one > 5 && two > 5) {
+     tf = 'True';
+   }
+   else if ((one + two) > 20) {
+     tf = 'True';
+   }
+   else{
+     tf = 'False';
+   }
+
+   document.getElementById('output').innerHTML = tf;
+
+
+}
+</script>
+</head>
+
+<body>
+Please enter two numbers:
+<input type="text" id="one" size="5">
+<input type="text" id="two" size="5">
+<button type="button" onclick="fives()">Click</button>
+<div id="output"></div>
+</body>
+</html>

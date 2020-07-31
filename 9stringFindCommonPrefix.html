@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Find THE Common Prefix</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+
+      // Write a function named prefix that returns the common prefix of two strings.
+      // For example, the common prefix of "disable" and "distasteful" is "dis".
+      // This function takes two parameters and returns the common prefix.
+
+      function pre() {
+        var w1 = document.getElementById("word1").value;
+        var w2 = document.getElementById("word2").value;
+        var pf = "";
+        var i = 0;
+
+        while (w1.charAt(i) == w2.charAt(i)) {
+          pf += w1.charAt(i);
+          i++;
+        }
+        document.getElementById("pre").innerHTML = pf;
+        return pf;
+      }
+
+    </script>
+  </head>
+
+  <body>
+    Word 1 <input type="text" id="word1" size="5" />
+    <br />
+    Word 2 <input type="text" id="word2" size="5" />
+    <br />
+    <button type="button" onclick="pre()">Click</button>
+    <div id="pre"></div>
+  </body>
+</html>
+
+<!--
+Heylo
+
+-->

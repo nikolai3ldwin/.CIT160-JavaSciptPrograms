@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Add THE End</title>
+<script>
+/* Input:
+ * Processing:
+ * Output:
+ */
+function add(){
+  var list = [ 17, 8, 9, 5, 20 ];
+  var plz = addEnds(list);
+}
+function addEnds(list){
+      var heyo = list[0] + list[list.length-1];
+      document.getElementById('heyo').innerHTML = heyo;
+      return heyo;
+    }
+</script>
+</head>
+
+<body>
+<h3>
+  <br>
+  Add End List
+</h3>
+<button type="button" onclick="addEnds()"> Add the End! </button>
+<br>
+<div id="heyo"></div>
+</body>
+</html>

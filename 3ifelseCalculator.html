@@ -1,0 +1,79 @@
+<!--
+Input:   Processing:       Output:
+7+3=10  If true then  Correct! Good job.
+7.5-3=5 If false then Incorrect. Try again!
+5*3=15
+10/2.5=6
+-->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Calculate</title>
+
+<script>
+/* Input: An integer
+ * Processing: Determine if the integer is even or odd
+ * Output: A message that says the integer is even or odd
+ */
+function calcu() {
+    // Get the user input from a text field and convert it to an integer.
+    var num1 = parseFloat(document.getElementById('inputBox1').value);
+    var operator = document.getElementById('inputBox2').value;
+    var num2 = parseFloat(document.getElementById('inputBox3').value);
+    var eqls = parseFloat(document.getElementById('inputBox4').value);
+    var message;
+
+    // Choose a message.
+    if (operator == "+") {
+      if (num1 + num2 == eqls) {
+        message = "Correct! Good job.";
+      }
+      else {
+        message = "Incorrect. Try again!";
+      }
+    }
+    else if (operator == "-") {
+      if (num1 - num2 == eqls) {
+        message = "Correct! Good job.";
+      }
+      else {
+        message = "Incorrect. Try again!";
+      }
+    }
+    else if (operator == "/") {
+      if (num1 / num2 == eqls) {
+        message = "Correct! Good job.";
+      }
+      else {
+        message = "Incorrect. Try again!";
+      }
+    }
+    else if (operator == "*") {
+      if (num1 * num2 == eqls) {
+        message = "Correct! Good job.";
+      }
+      else {
+        message = "Incorrect. Try again!";
+      }
+    }
+    else {
+      message = "Invalid Input.";
+    }
+    // Display the message to the user.
+    document.getElementById('output').innerHTML = message;
+}
+</script>
+</head>
+
+<body>
+<h1>Test Your Math Skills!</h1>
+<input type="text" id="inputBox1">
+<input type="text" id="inputBox2">
+<input type="text" id="inputBox3">
+= <input type="text" id="inputBox4">
+<button type="button" onclick="calcu()">Calculate</button>
+<div id="output"></div>
+</body>
+</html>

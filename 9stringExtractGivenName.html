@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get THE Given Name</title>
+    <script>
+      /* Input:
+       * Processing:
+       * Output:
+       */
+// Extracts a person's given name from his full name.
+// This function assumes fullName contains a string in
+// this format: FamilyName, GivenName
+function names() {
+var famName = document.getElementById("fName").value;
+var givName = document.getElementById("gName").value;
+var fullName = new String(famName + ', ' + givName);
+var name = extractFamilyName(fullName);
+document.getElementById('name').innerHTML = name;
+}
+
+function extractFamilyName(fullName) {
+    console.log(fullName);
+    var space = (fullName.replace(/^[^,]+, */, ''));
+    return space;
+}
+    </script>
+  </head>
+
+  <body>
+    Family Name <input type="text" id="fName" size="5" />
+    <br />
+    Given Name <input type="text" id="gName" size="5" />
+    <br />
+    <button type="button" onclick="names()">Click</button>
+    <div id="name"></div>
+  </body>
+</html>
+
+<!--
+Heylo
+
+-->
